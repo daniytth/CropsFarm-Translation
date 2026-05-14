@@ -1,4 +1,4 @@
-name: PulseFarm
+name: FarmPlugin
 main: net.farmsystem.Main
 version: 1.0
 folia-supported: true
