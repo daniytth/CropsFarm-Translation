@@ -1,0 +1,9 @@
+name: PulseFarm
+main: net.farmsystem.Main
+version: 1.0
+folia-supported: true
+api-version: 1.21
+author: FlameStudios
+website: www.github.com/bytezlol
+commands:
+  farm:
