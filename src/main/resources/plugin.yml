@@ -5,5 +5,7 @@ folia-supported: true
 api-version: 1.21
 author: FlameStudios
 website: www.github.com/bytezlol
+depend:
+  - WorldGuard
 commands:
   farm:

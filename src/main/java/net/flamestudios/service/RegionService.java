@@ -7,6 +7,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
 import net.flamestudios.FarmSystem;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +23,7 @@ public class RegionService {
     private volatile RegionContainer container;
 
     public void init() {
+        if (Bukkit.getPluginManager().getPlugin("WorldGuard") == null) return;
         try {
             this.container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         } catch (Exception e) {
