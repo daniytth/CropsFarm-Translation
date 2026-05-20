@@ -19,7 +19,7 @@ public final class FarmCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(final @NotNull CommandSender sender, final @NotNull Command command, final @NotNull String label, final @NotNull String[] args) {
         if (!sender.hasPermission("farm.reload")) {
-            sender.sendRichMessage("<red>You don't have permission to use this command!");
+            sender.sendRichMessage("<red>Nincsen jogosultságod a parancs futtatásához!"););
             return true;
         }
 
@@ -28,10 +28,10 @@ public final class FarmCommand implements CommandExecutor, TabCompleter {
         try {
             FarmSystem.getInstance().getFarmConfig().load();
             FarmSystem.getInstance().getRegionService().invalidate();
-            sender.sendRichMessage("<green>Configuration reloaded <gray>(" + (System.currentTimeMillis() - started) + "ms<gray>).");
+            sender.sendRichMessage("<green>Konfiguráció újratöltve <gray>(" + (System.currentTimeMillis() - started) + "ms<gray>).");
         } catch (Exception e) {
-            sender.sendRichMessage("<red>Failed to reload configuration: " + e.getMessage());
-            FarmSystem.getInstance().getLogger().severe("Reload failed: " + e.getMessage());
+            sender.sendRichMessage("<red>Nem sikerült újra tölteni a konfigurációt: " + e.getMessage());
+            FarmSystem.getInstance().getLogger().severe("Újratöltés sikertelen: " + e.getMessage());
         }
 
         return true;

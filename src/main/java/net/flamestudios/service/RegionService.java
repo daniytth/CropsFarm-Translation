@@ -27,7 +27,7 @@ public class RegionService {
         try {
             this.container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         } catch (Exception e) {
-            FarmSystem.getInstance().getLogger().log(Level.SEVERE, "WorldGuard not available, region checks disabled.", e);
+            FarmSystem.getInstance().getLogger().log(Level.SEVERE, "WorldGuard nem elérhető, a régiós ellenzőrzések le vannak tiltva.", e);
         }
     }
 
@@ -63,7 +63,7 @@ public class RegionService {
                 if (regionNames.contains(region.getId())) return true;
             }
         } catch (Exception e) {
-            FarmSystem.getInstance().getLogger().log(Level.WARNING, "WorldGuard region check failed.", e);
+            FarmSystem.getInstance().getLogger().log(Level.WARNING, "WorldGuard régió ellenzőrzés sikertelen.", e);
         }
         return false;
     }
